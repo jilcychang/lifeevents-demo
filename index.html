@@ -55,7 +55,7 @@ button{cursor:pointer;font-family:inherit}
 <div class="side" id="side"></div>
 
 <script>
-var SC=[{id:1,t:"三秒登入",e:"📱",s:"生物辨識一鍵進入"},{id:2,t:"對話搜尋",e:"🔍",s:"AI 助理找服務"},{id:3,t:"新生兒旅程",e:"👶",s:"端到端跨機關串聯"},{id:4,t:"數位錢包",e:"💳",s:"證件夾與行動繳費"},{id:5,t:"福利推播",e:"🔔",s:"政府主動找民眾"},{id:6,t:"購屋旅程",e:"🏠",s:"一站搞定五項手續"},{id:7,t:"政府收件匣",e:"📬",s:"通知集中不漏接"},{id:8,t:"資料足跡",e:"👁️",s:"透明數據治理"},{id:9,t:"銀行開戶",e:"🔗",s:"第三方服務進駐"},{id:10,t:"多語無障礙",e:"🌏",s:"數位包容設計"},{id:11,t:"服務評分",e:"⭐",s:"民眾回饋驅動改善"},{id:12,t:"退休旅程",e:"🎯",s:"AI 預測式服務"}];
+var SC=[{id:1,t:"三秒登入",e:"📱",s:"生物辨識一鍵進入"},{id:2,t:"對話搜尋",e:"🔍",s:"AI 助理找服務"},{id:3,t:"新生兒旅程",e:"👶",s:"端到端跨機關串聯"},{id:4,t:"數位憑證",e:"💳",s:"整合數發部 TW DIW"},{id:5,t:"福利推播",e:"🔔",s:"政府主動找民眾"},{id:6,t:"購屋旅程",e:"🏠",s:"一站搞定五項手續"},{id:7,t:"政府收件匣",e:"📬",s:"通知集中不漏接"},{id:8,t:"資料足跡",e:"👁️",s:"透明數據治理"},{id:9,t:"銀行開戶",e:"🔗",s:"第三方服務進駐"},{id:10,t:"多語無障礙",e:"🌏",s:"數位包容設計"},{id:11,t:"服務評分",e:"⭐",s:"民眾回饋驅動改善"},{id:12,t:"退休旅程",e:"🎯",s:"AI 預測式服務"}];
 var CHK='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>';
 var cur=0,sub=0;
 
@@ -127,12 +127,17 @@ function renderScene(){
     return W(h);}
 
   case 4:{
-    var h='<h3 style="font-size:16px;font-weight:700;margin-bottom:12px">💳 我的證件夾</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">';
-    [{i:"🪪",n:"數位身分證",s:"林小安",c:"#EFF6FF"},{i:"🏥",n:"數位健保卡",s:"出示 QR Code",c:"#ECFDF5"},{i:"🚗",n:"數位駕照",s:"有效至 119.06",c:"#FFFBEB"},{i:"👶",n:"寶寶健保卡",s:"林小寶",c:"#FFF0F5"}].forEach(function(c){h+='<div class="cd" style="background:'+c.c+';padding:12px"><div style="font-size:28px;margin-bottom:6px">'+c.i+'</div><p style="font-size:12px;font-weight:600">'+c.n+'</p><p style="font-size:10px;color:#8A8A8A;margin-top:2px">'+c.s+'</p></div>';});
+    var h='<h3 style="font-size:16px;font-weight:700;margin-bottom:4px">💳 數位憑證</h3><p style="font-size:11px;color:#8A8A8A;margin-bottom:12px">整合數發部 TW DIW · 選擇性揭露 · 分散式架構</p>';
+    // 數位憑證皮夾 - 佔2格寬
+    h+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">';
+    h+='<div class="cd" style="background:linear-gradient(135deg,#FFF4ED,#FFFBEB);padding:14px;grid-column:span 2;display:flex;gap:14px;align-items:center;border:1px solid #F5C842"><div style="width:52px;height:52px;border-radius:16px;background:#E8732A;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span style="font-size:26px">💳</span></div><div><p style="font-size:14px;font-weight:700;color:#1A1A1A">數位憑證皮夾</p><p style="font-size:11px;color:#8A8A8A;margin-top:2px">wallet.gov.tw · 數發部官方 APP</p></div></div>';
+    h+='<div class="cd" style="background:#EFF6FF;padding:12px"><div style="font-size:28px;margin-bottom:6px">🪪</div><p style="font-size:12px;font-weight:600">行動自然人憑證</p><p style="font-size:10px;color:#8A8A8A;margin-top:2px">TW FidO 已綁定</p></div>';
+    h+='<div class="cd" style="background:#ECFDF5;padding:12px"><div style="font-size:28px;margin-bottom:6px">📱</div><p style="font-size:12px;font-weight:600">電信門號電子卡</p><p style="font-size:10px;color:#8A8A8A;margin-top:2px">遠傳電信 已驗證</p></div>';
     h+='</div><p style="font-size:13px;font-weight:600;color:#8A8A8A;margin-bottom:8px">📄 我的電子文件</p>';
     ["電子戶籍謄本","出生證明","育兒津貼核定函"].forEach(function(d){h+='<div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #E5E7EB"><span style="color:#E8732A">📄</span><span style="font-size:12px;flex:1">'+d+'</span><span style="color:#E5E7EB">›</span></div>';});
-    if(sub===0)h+=BP('模擬掛號繳費 $150');
-    else h+='<div class="cd fade" style="border:2px solid #10B981;margin-top:12px"><div style="display:flex;align-items:center;gap:8px"><span style="font-size:24px">✅</span><div><p style="font-size:14px;font-weight:600;color:#10B981">繳費完成！</p><p style="font-size:11px;color:#8A8A8A">$150 已透過行動支付繳納</p></div></div></div>'+BD();
+    h+='<div style="margin-top:12px;background:#FFFBEB;border-radius:10px;padding:10px 12px;font-size:11px;color:#8A8A8A;line-height:1.6"><b style="color:#1A1A1A">選擇性揭露：</b>超商領包裹只出示姓名與照片，無需揭露身分證字號等多餘個資</div>';
+    if(sub===0)h+=BP('模擬超商取貨驗證');
+    else h+='<div class="cd fade" style="border:2px solid #10B981;margin-top:12px"><div style="display:flex;align-items:center;gap:8px"><span style="font-size:24px">✅</span><div><p style="font-size:14px;font-weight:600;color:#10B981">驗證完成！</p><p style="font-size:11px;color:#8A8A8A">已出示 QR Code，店員掃碼確認身分，包裹領取成功</p></div></div></div>'+BD();
     return W(h);}
 
   case 5:{
