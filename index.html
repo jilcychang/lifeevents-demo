@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>人生事件・政府挺你V3</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -226,6 +226,14 @@ body{font-family:"Microsoft JhengHei","微軟正黑體","PingFang TC",Arial,sans
 .cgbox h3{font-size:21px;font-weight:900;color:#1F497D;margin-top:14px}
 .cgbox p{font-size:14px;color:#6a6a60;margin-top:6px;line-height:1.5}
 .cgbox .pbtn{margin-top:16px}
+
+/* ===== 真手機／觸控裝置：全螢幕呈現（電腦滑鼠環境維持手機示意外框） ===== */
+@media (hover:none) and (pointer:coarse){
+  body{display:block;margin:0;padding:0;min-height:100dvh;background:#FDEAF1}
+  .stagehint,.notch,.statusbar{display:none}
+  .phone{width:100vw;max-width:none;height:100dvh;max-height:none;border-radius:0;box-shadow:none;padding-top:env(safe-area-inset-top)}
+  .nav{padding-bottom:env(safe-area-inset-bottom)}
+}
 </style>
 </head>
 <body>
